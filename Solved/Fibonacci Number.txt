@@ -1,0 +1,23 @@
+class Solution {
+    public int fib(int n) {
+        
+        if(n==0)
+            return 0;
+        
+        int prev=0,next=1,res=1;
+        for(int i=1;i<n;i++)
+        {
+          res=prev+next;
+            prev=next;
+            next=res;
+        }
+        return res;
+    }
+} 
+
+
+/*
+Input: n = 2
+Output: 1
+Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+*/

@@ -1,0 +1,23 @@
+class Solution {
+    public int lengthOfLastWord(String s) 
+    {
+       String s2=s.trim();
+       char[] arr=s2.toCharArray();
+       int n=s2.length();
+       int count=0;; 
+       while(n!=0 && arr[n-1]!=' ')
+       {
+         n--;
+         count++;
+       }
+        
+       return count;
+    }
+}
+
+
+
+/*
+Input: s = "Hello World"
+Output: 5
+*/

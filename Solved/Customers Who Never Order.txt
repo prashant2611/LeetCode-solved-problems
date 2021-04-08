@@ -1,0 +1,14 @@
+# Write your MySQL query statement below
+select name as Customers from Customers where Id not in(select customerId from Orders);
+
+
+/*
++----+-------+
+| Id | Name  |
++----+-------+
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
++----+-------+
+*/

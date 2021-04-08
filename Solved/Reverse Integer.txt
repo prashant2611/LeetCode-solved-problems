@@ -1,0 +1,50 @@
+import java.lang.Math; 
+class Solution {
+    public byte size(int x) //Method to determine number of digits
+    {
+        byte count = 1;
+        while(x > 9)
+        {
+            x /= 10;
+            count++;
+        }
+        return count;
+    }
+    
+    public int reverse(int x) 
+    {
+        long num =0; // temp value to hold output
+        boolean signed = false; //Gate to ensure we return correct signed/unsigned value
+        if(x < 0)
+        {
+            signed = true;
+            x *= -1;
+        }
+        //Reverser
+        for(int i = size(x)-1; i > 0; i--)
+        {
+            if(x != 10)
+            {
+                num += (x%10 * Math.pow(10, i));
+                x = x>10 ? (x-x%10)/10: x;
+            }
+            else
+            {
+                x = 1;
+            }
+        }
+        num += x;
+        if(num >= Math.pow(2, 31) || num <= Math.pow(-2, 31)) //If number is 2^31 or greater signed/unsigned
+        {
+            return 0;
+        }
+        return signed ? (int)num * -1: (int)num; // if signed, * -1, if not signed return number;
+        
+    }
+}
+
+
+/*
+Input: x = 123
+Output: 321
+*/

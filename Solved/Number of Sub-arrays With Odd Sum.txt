@@ -1,0 +1,27 @@
+class Solution {
+    public int numOfSubarrays(int[] arr) {
+        int c1 = 0, c2 = 1, n = arr.length;
+        int currSum = 0;
+        long ans = 0;
+        int mod = (int)Math.pow(10, 9) + 7;
+        for(int i = 0; i < n; i++) {
+            currSum += arr[i];
+            if(currSum % 2 == 0) {
+                ans = (ans + c1) % mod;
+                c2++;
+            } else {
+                ans = (ans + c2) % mod;
+                c1++;
+            }
+        }
+        return (int)ans;
+    }
+}
+
+/*
+Input: arr = [1,3,5]
+Output: 4
+Explanation: All sub-arrays are [[1],[1,3],[1,3,5],[3],[3,5],[5]]
+All sub-arrays sum are [1,4,9,3,8,5].
+Odd sums are [1,9,3,5] so the answer is 4.
+*/

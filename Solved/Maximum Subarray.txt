@@ -1,0 +1,34 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        
+       int sum=nums[0],ilast=0,jlast=0,newsum=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            newsum=0;
+            for(int j=i;j<nums.length;j++)
+            {
+                if((newsum+nums[j])>sum)
+                {
+                    ilast=i;
+                    jlast=j;
+                    sum=newsum+nums[j];
+                }
+                newsum=newsum+nums[j];
+            }
+            
+        }
+        sum=0;
+        for(int i=ilast;i<=jlast;i++)
+        {
+           sum=sum+nums[i];
+        }
+        return sum;
+    }
+}
+
+
+/*
+Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+*/

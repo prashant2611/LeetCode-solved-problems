@@ -1,0 +1,66 @@
+class Solution {
+    public boolean validMountainArray(int[] arr) 
+    {
+        if(arr.length<=2)
+            return false;
+        
+        int count=0;
+        int i=0;
+        for(;i<arr.length-1;i++)
+        {
+            if(arr[i]<arr[i+1])
+            {
+                count++;
+            }
+            else
+            {
+                if(count==0)
+                {
+                    return false;
+                }
+                break;
+            }
+        }
+        count=0;
+        int rem=0;
+        rem=arr.length-i-1;
+        
+        if(i>=arr.length-1)
+            return false;
+        
+        for(;i<arr.length-1;i++)
+        {
+            if(arr[i]>arr[i+1])
+            {
+                count++;
+            }
+            else
+            {
+                if(count==0)
+                {
+                    return false;
+                }
+                break;
+            }
+        }
+        
+        if(count<rem)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+}
+
+
+
+/*
+Input: arr = [2,1]
+Output: false
+
+Input: arr = [0,3,2,1]
+Output: true
+*/

@@ -1,0 +1,22 @@
+class Solution {
+    public int findMin(int[] nums) 
+    {
+        int n=nums[0];
+        for(int i=0;i<nums.length;i++)
+        {
+            if(n>nums[i])
+            {
+                n=nums[i];
+            }
+        }
+        return n;
+    }
+}
+
+
+
+/*
+Input: nums = [3,4,5,1,2]
+Output: 1
+Explanation: The original array was [1,2,3,4,5] rotated 3 times.
+*/

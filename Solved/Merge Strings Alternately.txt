@@ -1,0 +1,35 @@
+class Solution {
+    public String mergeAlternately(String word1, String word2) 
+    {
+      char[] arr=word1.toCharArray();
+      char[] brr=word2.toCharArray();
+        int n=0;
+        n=(word1.length()+word2.length());
+       char[] crr=new char[n];
+       int w1=0;
+       int w2=0; 
+        for(int i=0;i<crr.length;)
+        {
+            if(w1<word1.length())
+            {
+                crr[i++]=arr[w1++];
+            }
+            if(w2<word2.length())
+            {
+                crr[i++]=brr[w2++];
+            }
+        }
+        String output=new String(crr);
+        return output;
+    }
+}
+
+
+/*
+Input: word1 = "abc", word2 = "pqr"
+Output: "apbqcr"
+Explanation: The merged string will be merged as so:
+word1:  a   b   c
+word2:    p   q   r
+merged: a p b q c r
+*/

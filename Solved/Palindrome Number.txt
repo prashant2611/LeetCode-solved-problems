@@ -1,0 +1,25 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        int rev=0,num=x;
+        if(x>=0)
+        {
+            while(num!=0)
+            {
+                rev=(rev*10)+(num%10);
+                num=num/10;
+            }
+        }
+        if(rev==x)
+        {
+            return true;
+        }
+        return false;
+    }
+}
+
+
+/*
+Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+*/

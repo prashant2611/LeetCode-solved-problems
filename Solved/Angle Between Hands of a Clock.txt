@@ -1,0 +1,22 @@
+class Solution {
+    public double angleClock(int hour, int minutes) 
+    {
+        double m=0;
+        m=minutes*6;
+        double h=hour%12;;
+        h=(h*30)+(minutes*0.5);
+        double angle = Math.abs(m - h);
+        
+        if((angle)>180)
+          return (360-angle);
+        else
+             return (angle);
+        
+    }
+}
+
+
+/*
+Input: hour = 12, minutes = 30
+Output: 165
+*/

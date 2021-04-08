@@ -1,0 +1,36 @@
+class Solution {
+    public int myAtoi(String s) 
+    {
+     String s2=s.trim();
+     char[] arr=s2.toCharArray();
+       int i=0;
+       double n=0;
+        try
+        {     
+       for(i=1;(i<arr.length && arr[i]!=' ')&& (arr[i]>='0' && arr[i]<='9') ;i++);
+       n=Double.parseDouble(s2.substring(0,i));
+             return (int)n;
+        
+        }
+        catch(Exception e)
+        {
+            return 0;
+        }
+    }
+}
+
+
+
+/*
+Input: s = "42"
+Output: 42
+Explanation: The underlined characters are what is read in, the caret is the current reader position.
+Step 1: "42" (no characters read because there is no leading whitespace)
+         ^
+Step 2: "42" (no characters read because there is neither a '-' nor '+')
+         ^
+Step 3: "42" ("42" is read in)
+           ^
+The parsed integer is 42.
+Since 42 is in the range [-231, 231 - 1], the final result is 42.
+*/

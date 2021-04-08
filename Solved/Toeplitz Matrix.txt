@@ -1,0 +1,23 @@
+class Solution {
+    public boolean isToeplitzMatrix(int[][] matrix) {
+       int lengthM = matrix.length - 1, lengthN = matrix[0].length - 1;
+       for (var i = 0; i < lengthM; i++) {
+        for (var j = 0; j < lengthN; j++) {
+            if (matrix[i][j] != matrix[i+1][j+1]) {
+                return false;
+            }   
+        }   
+    }   
+    return true;
+    }
+}
+
+
+/*
+Input: matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
+Output: true
+Explanation:
+In the above grid, the diagonals are:
+"[9]", "[5, 5]", "[1, 1, 1]", "[2, 2, 2]", "[3, 3]", "[4]".
+In each diagonal all elements are the same, so the answer is True.
+*/

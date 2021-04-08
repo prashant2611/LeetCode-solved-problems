@@ -1,0 +1,25 @@
+class Solution {
+    public int totalMoney(int n) 
+    {
+        int sum=0;
+        int j=0;
+        j=n/7+1;
+        int count=0;
+        for(int i=1;i<=j && count<n;i++)
+        {
+           for(int k=0;k<7 && count<n;k++)
+           {
+               count++;
+               sum=sum+(i+k);
+           }
+        }
+        return sum;
+    }
+}
+
+
+/*
+Input: n = 4
+Output: 10
+Explanation: After the 4th day, the total is 1 + 2 + 3 + 4 = 10.
+*/
